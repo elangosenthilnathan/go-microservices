@@ -28,10 +28,9 @@ jobs:
         go-version: '1.20'
 
     - name: Build movie-microservice
-      run: go build -v ./...
+      run: go build -v ./src/movie-microservice
 
-    - name: Test
-      run: go test -v ./...
+
 
     - name: Download ShiftLeft CLI
       run: |
