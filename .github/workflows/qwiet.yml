@@ -32,6 +32,7 @@ jobs:
         cd src/movie-microservice
         go mod init movie-microservice
         go mod tidy
+        swag init
         go build -v src/movie-microservice
 
 
