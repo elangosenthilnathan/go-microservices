@@ -35,11 +35,9 @@ jobs:
 
     - name: Build movie-microservice
       run: |
-        cd src/movie-microservice
         go mod init movie-microservice
         go mod tidy        
-        $ go get -u github.com/swaggo/swag/cmd/swag github.com/swaggo/gin-swagger github.com/swaggo/gin-swagger/swaggerFiles github.com/alecthomas/template github.com/gin-gonic/gin github.com/sirupsen/logrus gopkg.in/mgo.v2/bson github.com/natefinch/lumberjack
-        cd ../..
+        go get -u github.com/swaggo/swag/cmd/swag github.com/swaggo/gin-swagger github.com/swaggo/gin-swagger/swaggerFiles github.com/alecthomas/template github.com/gin-gonic/gin github.com/sirupsen/logrus gopkg.in/mgo.v2/bson github.com/natefinch/lumberjack
         go build -v ./movie-microservice/...
 
     - name: Build movie-microservice
@@ -48,7 +46,7 @@ jobs:
         go mod init user-microservice
         go mod tidy
         swag init
-        go build -v src/user-microservice
+        go build -v ./user-microservice/...
         cd ../..
 
 
