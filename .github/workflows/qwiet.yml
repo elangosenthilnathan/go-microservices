@@ -30,7 +30,8 @@ jobs:
     - name: Build movie-microservice
       run: |
         cd src/movie-microservice
-        go mod init
+        go mod init movie-microservice
+        go init movie-microservice
         go build -v src/movie-microservice
 
 
