@@ -33,7 +33,8 @@ jobs:
         rm -rf docs
         go mod init movie-microservice
         go mod tidy
-        go build -v 
+        ls -lart
+        go build ./... 
         cd ../..
 
     - name: Build movie-microservice
@@ -58,7 +59,7 @@ jobs:
         export SL_CPG_OPTS="-J-Xms2g -J-Xmx7g"
         export NODE_OPTIONS="--max_old_space_size=4096"
         echo $SL_CPG_OPTS
-        ${GITHUB_WORKSPACE}/sl analyze --strict --wait --app shiftleft-kotlin-demo --container 18fgsa/s3-resource --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --go .
+        ${GITHUB_WORKSPACE}/sl analyze --strict --wait --app go-microservices-demo --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --go .
       env:
         NODE_OPTIONS: "--max_old_space_size=4096"
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
