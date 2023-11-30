@@ -29,13 +29,8 @@ jobs:
 
     - name: Build movie-microservice
       run: |
-        cd src/movie-microservice
-        rm -rf docs
-        go mod init movie-microservice
-        go mod tidy
-        ls -lart
-        go build ./... 
-        cd ../..
+        go run src/movie-microservice/main.go
+
 
     - name: Build movie-microservice
       run: |
