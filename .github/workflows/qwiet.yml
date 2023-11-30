@@ -32,6 +32,7 @@ jobs:
         cd src/movie-microservice
         go mod init movie-microservice
         go mod tidy
+        rm -rf docs
         go get -u github.com/swaggo/swag/cmd/swag
         swag init
         go get -u github.com/swaggo/gin-swagger
