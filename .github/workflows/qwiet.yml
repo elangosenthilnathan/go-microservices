@@ -31,7 +31,7 @@ jobs:
       run: |
         cd src/movie-microservice
         go mod init movie-microservice
-        go init movie-microservice
+        go mod tidy
         go build -v src/movie-microservice
 
 
