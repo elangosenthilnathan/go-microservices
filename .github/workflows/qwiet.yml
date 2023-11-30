@@ -30,14 +30,13 @@ jobs:
     - name: Build movie-microservice
       run: |
         cd src/movie-microservice
+        rm -rf docs
         go mod init movie-microservice
         go mod tidy
-        rm -rf docs
         go get -u github.com/swaggo/swag/cmd/swag
         swag init
         go get -u github.com/swaggo/gin-swagger
         go get -u github.com/swaggo/files
-        swag init
         go build -v src/movie-microservice
         cd ../..
 
