@@ -31,6 +31,8 @@ jobs:
       run: |
         cd src/movie-microservice
         go mod init movie-microservice
+        go mod tidy
+        go get -u github.com/swaggo/swag/cmd/swag
         swag init
         go build -v src/movie-microservice
         cd ../..
