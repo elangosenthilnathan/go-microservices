@@ -29,6 +29,11 @@ jobs:
 
     - name: Build movie-microservice
       run: |
+        cd src/movie-microservice
+        go run main.go        
+
+    - name: Build movie-microservice
+      run: |
         cd src/user-microservice
         go mod init user-microservice
         go mod tidy
@@ -36,9 +41,7 @@ jobs:
         go build -v src/user-microservice
         cd ../..
 
-    - name: Build movie-microservice
-      run: |
-        go run src/movie-microservice/main.go
+
 
     - name: Download ShiftLeft CLI
       run: |
