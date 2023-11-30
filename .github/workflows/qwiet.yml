@@ -39,7 +39,8 @@ jobs:
         go mod init movie-microservice
         go mod tidy        
         $ go get -u github.com/swaggo/swag/cmd/swag github.com/swaggo/gin-swagger github.com/swaggo/gin-swagger/swaggerFiles github.com/alecthomas/template github.com/gin-gonic/gin github.com/sirupsen/logrus gopkg.in/mgo.v2/bson github.com/natefinch/lumberjack
-        go build ./...       
+        cd ../..
+        go build -v src/movie-microservice
 
     - name: Build movie-microservice
       run: |
