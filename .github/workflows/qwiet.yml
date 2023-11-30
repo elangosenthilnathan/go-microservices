@@ -28,7 +28,10 @@ jobs:
         go-version: '1.20'
 
     - name: Build movie-microservice
-      run: go build -v ./src/movie-microservice
+      run: |
+        cd src/movie-microservice
+        go mod init
+        go build -v src/movie-microservice
 
 
 
@@ -46,7 +49,7 @@ jobs:
         export SL_CPG_OPTS="-J-Xms2g -J-Xmx7g"
         export NODE_OPTIONS="--max_old_space_size=4096"
         echo $SL_CPG_OPTS
-        ${GITHUB_WORKSPACE}/sl analyze --strict --wait --app shiftleft-kotlin-demo --container 18fgsa/s3-resource --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --kotlin .
+        ${GITHUB_WORKSPACE}/sl analyze --strict --wait --app shiftleft-kotlin-demo --container 18fgsa/s3-resource --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --go .
       env:
         NODE_OPTIONS: "--max_old_space_size=4096"
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
