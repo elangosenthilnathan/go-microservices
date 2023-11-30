@@ -33,7 +33,9 @@ jobs:
         go mod init movie-microservice
         go mod tidy
         go get -u github.com/swaggo/swag/cmd/swag
-        go get -u github.com/swaggo/gin-swagger/swaggerFiles
+        swag init
+        go get -u github.com/swaggo/gin-swagger
+        go get -u github.com/swaggo/files
         swag init
         go build -v src/movie-microservice
         cd ../..
