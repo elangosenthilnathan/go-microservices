@@ -45,8 +45,8 @@ jobs:
     - name: Go Build 
       shell: bash
       run: |
-        go build ./src/movie-microservice
-        go build ./src/user-microservice
+        go build -v -x ./src/movie-microservice/main.go
+        go build -v -x ./src/user-microservice/main.go
 
     - name: NextGen Static Analysis
       run: | 
