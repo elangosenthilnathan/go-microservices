@@ -42,11 +42,11 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
 
-    - name: Go Build movie-microservice
+    - name: Go Build 
       shell: bash
       run: |
         go build ./src/movie-microservice
-
+        go build ./src/user-microservice
 
     - name: NextGen Static Analysis
       run: | 
