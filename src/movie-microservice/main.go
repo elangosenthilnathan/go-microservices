@@ -9,15 +9,15 @@ import (
 	"io"
 	"os"
 
-	"./common"
-	"./controllers"
-	"./databases"
+	"github.com/elangosenthilnathan/go-microservices/src/movie-microservice/common"
+	"github.com/elangosenthilnathan/go-microservices/src/movie-microservice/controllers"
+	"github.com/elangosenthilnathan/go-microservices/src/movie-microservice/databases"
 	"github.com/gin-gonic/contrib/jwt"
 	"github.com/gin-gonic/gin"
 
-	_ "./docs"
-	"github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
+	_ "github.com/elangosenthilnathan/go-microservices/src/movie-microservice/docs"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	swaggerFiles "github.com/swaggo/files"
 )
 
 // Main manages main golang application
