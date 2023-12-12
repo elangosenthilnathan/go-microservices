@@ -9,7 +9,7 @@ import (
 	"errors"
 	"time"
 
-	"../common"
+	"github.com/elangosenthilnathan/go-microservices/src/user-microservice/common"
 	jwt_lib "github.com/dgrijalva/jwt-go"
 	"gopkg.in/mgo.v2/bson"
 )

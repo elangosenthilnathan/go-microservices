@@ -8,10 +8,10 @@ package controllers
 import (
 	"net/http"
 
-	"../common"
-	"../daos"
-	"../models"
-	"../utils"
+	"github.com/elangosenthilnathan/go-microservices/src/user-microservice/common"
+	"github.com/elangosenthilnathan/go-microservices/src/user-microservice/daos"
+	"github.com/elangosenthilnathan/go-microservices/src/user-microservice/models"
+	"github.com/elangosenthilnathan/go-microservices/src/user-microservice/utils"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/mgo.v2/bson"
